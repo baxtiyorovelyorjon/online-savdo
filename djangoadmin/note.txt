@@ -1,0 +1,46 @@
+0.pip install virtualenv  - virtual muhit hosil qilamiz
+
+1.django-admin startproject project_name
+
+2.python3 -m venv env
+    source env/bin/activate  - activate ni yoqish uchun
+    deactivate   - o'chirish uchun
+3. pip install django  - django ni o'rnatamiz
+
+4.pip install pillow
+
+5.pip install django-ckeditor
+
+6.pip install django-mptt
+python3 manage.py migrate
+python3 manage.py runserver qilib tekshirib olamiz
+
+7.django-admin startapp app_name
+
+8.Add app to settings file   Biz yaratgan appni settings file ga qo'shib quyamiz
+   'ckeditor',
+    'mptt',
+    'app_name',  ko'rinishida qo'shib qo'yamiz
+
+9.App ichida url python file ochamiz
+
+10.Project_name nomli papkamiz ichidagi url ga app ni url bn qoshamiz
+urlpatterns = [
+    path('app_name',include('app_name.urls)),
+    ]  ko'rinishida
+
+11.settings file ga static kodlar yoziladi
+
+STATIC_URL = '/static/'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+SITE_ID = 1
+
+CKEDITOR_JQUERY_URL = 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js'
+
+CKEDITOR_UPLOAD_PATH = 'images/'
+CKEDITOR_IMAGE_BACKEND = "pillow"
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
